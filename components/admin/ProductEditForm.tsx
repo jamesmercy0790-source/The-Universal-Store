@@ -128,7 +128,7 @@ export function ProductEditForm({
                 </span>
                 <button
                   type="button"
-                  onClick={() => startTransition(() => setVariantActive(v.id, !v.is_active))}
+                  onClick={() => startTransition(() => {void setVariantActive(v.id, !v.is_active) })}
                   className={v.is_active ? "text-signal-success text-xs hover:underline" : "text-bone-600 text-xs hover:underline"}
                 >
                   {v.is_active ? "Visible — click to hide" : "Hidden — click to show"}

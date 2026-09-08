@@ -17,7 +17,7 @@ export function ProductStatusActions({ productId, status }: Props) {
         <button
           type="button"
           disabled={pending}
-          onClick={() => startTransition(() => setProductStatus(productId, "active"))}
+          onClick={() => startTransition(() => { void setProductStatus(productId, "active") })}
           className="text-signal-success hover:underline"
         >
           Publish
@@ -27,7 +27,7 @@ export function ProductStatusActions({ productId, status }: Props) {
         <button
           type="button"
           disabled={pending}
-          onClick={() => startTransition(() => setProductStatus(productId, "draft"))}
+          onClick={() => startTransition(() => { void setProductStatus(productId, "draft") })}
           className="text-signal-warning hover:underline"
         >
           Unpublish
@@ -37,7 +37,7 @@ export function ProductStatusActions({ productId, status }: Props) {
         <button
           type="button"
           disabled={pending}
-          onClick={() => startTransition(() => setProductStatus(productId, "archived"))}
+          onClick={() => startTransition(() => { void setProductStatus(productId, "archived") })}
           className="text-bone-500 hover:text-signal-danger hover:underline"
         >
           Archive
@@ -47,7 +47,7 @@ export function ProductStatusActions({ productId, status }: Props) {
         <button
           type="button"
           disabled={pending}
-          onClick={() => startTransition(() => setProductStatus(productId, "draft"))}
+          onClick={() => startTransition(() => { void setProductStatus(productId, "draft") })}
           className="text-brass-400 hover:underline"
         >
           Restore

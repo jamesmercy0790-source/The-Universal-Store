@@ -139,7 +139,7 @@ function parseVariantOptions(productKeyEn: string | undefined, variantKey: strin
     // Fall back to a single unlabeled option rather than guessing key names.
     return values.length > 0 ? { Option: values.join(" / ") } : {};
   }
-  return Object.fromEntries(keys.map((k, i) => [k, values[i]]));
+  return Object.fromEntries(keys.map((k, i) => [k, values[i]!])) as Record<string, string>;
 }
 
 function toSupplierSummary(detail: CjProductDetail): SupplierProductSummary {

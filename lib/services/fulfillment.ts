@@ -102,7 +102,7 @@ export async function submitOrderToCj(orderId: string): Promise<SubmitOrderResul
       fullName: address.fullName ?? "",
       line1: address.line1 ?? "",
       line2: address.line2,
-      city: address.city,
+      city: address.city ?? "",
       state: address.state,
       postalCode: address.postalCode,
       countryCode: order.country_code,

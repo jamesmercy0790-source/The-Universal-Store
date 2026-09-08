@@ -283,6 +283,7 @@ export const cjProvider: Supplier = {
       // quote — a real admin UI could let the customer choose among
       // options[], but the destination-availability sync only needs one.
       const cheapest = [...options].sort((a, b) => a.logisticPrice - b.logisticPrice)[0];
+      if (!cheapest) return { isAvailable: false };
       const [minDays, maxDays] = (cheapest.logisticAging ?? "").split("-").map((s) => parseInt(s, 10));
 
       return {

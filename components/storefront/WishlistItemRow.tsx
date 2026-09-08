@@ -54,7 +54,7 @@ export function WishlistItemRow({ id, title, slug, imageUrl, priceCents, currenc
       <button
         type="button"
         disabled={pending}
-        onClick={() => startTransition(() => removeFromWishlist(id))}
+        onClick={() => startTransition(() => { void removeFromWishlist(id) })}
         className="text-xs text-bone-500 hover:text-signal-danger"
       >
         Remove

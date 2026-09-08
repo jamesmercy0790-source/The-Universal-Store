@@ -109,7 +109,7 @@ class FakeQueryBuilder implements PromiseLike<{ data: any; error: any }> {
   }
 
   private execute(): { data: any; error: any } {
-    const rows = this.store[this.table];
+    const rows = this.store[this.table] ?? [];
 
     if (this.mode === "select") {
       const matched = rows.filter((r) => this.matches(r));
